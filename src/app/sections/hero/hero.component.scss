@@ -1,0 +1,131 @@
+@use '../../../scss/utilities'  as *;
+@use '../../../scss/global/variables'  as *;
+.hero{
+    // border: 1px solid green;
+    min-height: 100vh;
+    padding: 9rem 3rem;
+    
+    display: flex;
+    flex-direction: column;
+  
+    // align-items: center;
+    justify-content: center;
+
+    @include breakpoint(large){
+        
+        margin-left: $spacer;
+
+    }
+
+    h1{
+        margin: 0;
+    }
+    &__title{
+        font-size: 4rem;
+        font-family: var(--font-monserrat);
+        white-space: nowrap;
+        line-height: 1;
+
+        &--blue{
+            color: var(--primary);
+        }
+        &--red{
+            color: var(--secondary);
+        }
+        
+    }
+
+    @include breakpoint(medium){
+        &__title{
+            font-size: 8rem;
+        }
+    }
+    &__welcome{
+        // border: 1px solid red;
+    }
+
+    &__text{
+        // border: 1px solid pink;
+        font-size: 1.4rem;
+        color: var(--gray);
+        margin-top: 6.3rem;
+    }
+
+    @include breakpoint(medium){
+        &__text{
+            font-size: 1.6rem;
+        }
+    }
+
+    &__button{
+        margin-top: 5.1rem;
+    }
+
+    &__scroll-down{
+        // margin-top: 10rem;
+        border:  1px solid blue;
+      
+        position: relative;
+        bottom: 90vh;
+        display: flex;
+
+    }
+
+    
+
+   
+}
+
+/*top tags*/
+.hero::before,.hero::after{
+    position: absolute;
+    font-family: var(--font-la-belle-aurore);
+    color: var(--tags);
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.hero:before{
+    content: '<html>';
+    top: 2rem;
+    left: 1rem; 
+}
+
+@include breakpoint(large) {
+    .hero:before{
+        left: 1rem+$spacer; 
+    }
+}
+
+.hero::after{
+    content: '<body>';
+    top: 3.5rem;
+   
+}
+
+.tag-heading::after{
+    left: 35rem;
+    margin-top: 1rem;
+  }
+
+  @include breakpoint(medium) {
+    .tag-heading::after{
+        left: 66rem;
+        
+      }
+  }
+
+  @include breakpoint(large) {
+    .tag-heading::after{
+        left: 66rem+$spacer;
+        
+      }
+  }
+
+  
+
+
+
+/*Pruebas*/
+
+

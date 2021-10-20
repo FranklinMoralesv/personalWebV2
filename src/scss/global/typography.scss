@@ -1,0 +1,69 @@
+@use '../utilities' as *;
+@use '../global/variables' as *;
+
+h1,
+h2,
+h3,p {
+  margin: 0;
+//   line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+.tag::before,.tag::after{
+  position: absolute;
+  color: var(--tags);
+  font-family: var(--font-la-belle-aurore);
+  font-style: italic;
+  font-size: 1.8rem;
+  left: 2.6rem;
+}
+
+@include breakpoint(large){
+  .tag::before,.tag::after{
+    
+    font-size: 1.8rem;
+    left: 2.6rem+$spacer;
+  }
+}
+
+.tag::before{
+  // margin-top: -2rem;
+  margin-top: -3rem;
+}
+
+.tag::after{
+  // margin-top: 4.5rem;
+  margin-top: 3rem;
+}
+
+
+.tag-paragraph::before{
+  content: '<p>';
+}
+
+.tag-paragraph::after{
+  content: '</p>';
+  
+    
+   
+}
+
+.tag-heading::before{
+  content: '<h>';
+}
+.tag-heading::after{
+  content: '</h>';
+
+}
+
+
+
+

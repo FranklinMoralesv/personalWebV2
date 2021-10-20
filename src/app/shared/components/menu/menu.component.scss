@@ -1,0 +1,89 @@
+@use '../../../../scss/utilities' as *;
+.menu{
+    
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 20rem;
+    min-height: 100vh;
+ 
+    
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--gray-dark);
+    // border: 1px solid blue;
+
+    &__logo{
+        max-width: 10rem;
+    }
+
+    &__logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    
+    height: 20rem;
+    }
+    &__nav{
+        // border: 1px solid yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a{
+            color: var(--gray);
+            font-size: 1.4rem;
+            // border: 1px solid blue;
+            padding: 2rem;
+            width: 100%;
+            text-align:center;
+            border-top: 1px solid var(--gray);
+            border-left: 1px solid var(--gray);
+            border-right: 1px solid var(--gray);
+        }
+        a:last-of-type{
+            border-bottom: 1px solid var(--gray);
+        }
+
+    }
+
+
+    &__social{
+        font-size: 3rem;
+        // border: 1px solid pink;
+        text-align:center;
+        justify-content: center;
+        color: var(--gray);
+        margin-bottom: 2rem;
+
+        a{
+            margin:auto 1rem;
+        }
+
+        a:visited{
+            color: var(--gray);
+        }
+        
+    }
+
+    a:hover{
+        color: var(--primary);
+    }
+
+    
+}
+
+
+
+
+@include breakpoint(large){
+    .menu{
+        display: flex; 
+        
+    }
+}
+

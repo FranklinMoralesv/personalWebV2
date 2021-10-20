@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@use './scss/global' as *;
+@use './scss/utilities' as *;
+
+
+.btn-outline{
+    font-family: var(--font-open-sans);
+    font-size: 1.4rem;
+    background-color: transparent;
+    padding: 0.8rem 3.7rem;
+
+}
+
+.btn-outline--primary{
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.btn-outline--secondary{
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+@include breakpoint (medium){
+    .btn-outline{
+        font-size: 1.6rem;
+    }
+}
+
+
+/*Utilities*/
+.flex{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+    
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+/*scroll down*/
+.scroll-down{
+    // border: 1px solid red;
+    font-size: 1.4rem;
+    writing-mode: vertical-rl;
+    position: absolute;
+    bottom: 1rem;
+}
+.scroll-down--right{
+    right: 2rem;
+}
