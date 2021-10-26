@@ -1,0 +1,38 @@
+@use '../../../../scss/utilities' as *;
+.subheading{
+    color: var(--primary);
+    font-size: 4.2rem;
+    font-family: var(--font-monserrat);
+    padding: 1rem;
+    padding:2rem 3rem;
+
+    // border: 1px solid red;
+
+    &__tag::before{
+        content: '<h2>';
+       
+    }
+
+    &__tag::after{
+        content: '</h2>';
+        margin-top: 6rem;
+    }
+
+    @include breakpoint(medium) {
+       
+        font-size: 5.5rem;
+
+        &__tag::after{
+            margin-top: 8rem;
+        }
+    }
+   
+    @include breakpoint(large) {
+        font-size: 6.5rem;
+        
+    }
+    
+
+
+}
+

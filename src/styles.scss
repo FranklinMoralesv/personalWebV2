@@ -3,6 +3,7 @@
 @use './scss/utilities' as *;
 
 
+/**/
 .btn-outline{
     font-family: var(--font-open-sans);
     font-size: 1.4rem;
@@ -26,6 +27,26 @@
     }
 }
 
+.text{
+    font-size: 1.4rem;
+    margin-top: 7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    // border: 1px solid green;
+}
+@include breakpoint(large) {
+    .text{
+        font-size: 1.6rem;
+        
+    }
+}
+
+
+
+.link,.keyword{
+    color: var(--primary);
+}
+
 
 /*Utilities*/
 .flex{
@@ -37,6 +58,16 @@
 .align-center{
     align-items: center;
     
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scroll-bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 

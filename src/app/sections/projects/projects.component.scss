@@ -1,0 +1,130 @@
+@use '../../../scss/utilities'  as *;
+@use '../../../scss/global/variables'  as *;
+.projects{
+    
+    &::before{
+        content: '<main>';
+    }
+    &::after{
+        margin-top: 3rem;
+        content: '</main>';
+    }
+    &__gallery{
+        
+        padding: 0;
+        margin-top: 5.5rem;
+
+        border-radius: 1.5rem;
+        
+
+        border: 1px solid blue;
+        display: flex;
+        flex-wrap: wrap;
+
+        // overflow-y: hidden;
+
+     
+        &-items{
+            position: relative;
+            flex-basis: 100%;
+            border: 1px solid purple;
+            cursor: pointer;
+
+            transition: filter .3s ;
+
+            filter: brightness(70%);
+            -webkit-filter: brightness(70%);
+            -moz-filter: brightness(70%);
+            overflow: hidden;
+            
+        }
+
+        @include breakpoint(medium) {
+            &-items{
+                flex-basis: 50%;
+            }
+        }
+
+        @include breakpoint(large) {
+            &-items{
+                flex-basis: 33.33%;
+            }
+            &-items:last-of-type,&-items:nth-last-of-type(2){
+                flex-basis: 50%;
+               
+            }
+
+        }
+        @include breakpoint(xlarge) {
+            &-items,&-items:last-of-type,&-items:nth-last-of-type(2){
+                flex-basis: 25%;
+            }
+        }
+
+        &-view{
+            display: none;
+            position: absolute;
+            top: 50%;  /* position the top  edge of the element at the middle of the parent */
+            left: 50%; /* position the left edge of the element at the middle of the parent */
+             /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+            transform: translate(-50%, -50%);
+            background-color: var(--primary);
+           
+            place-content: center;
+        
+            width: 1vw;
+            height: 1vw;
+            padding: 5rem;
+            border-radius: 50%;
+            
+            font-size: 1.5rem;
+            text-align: center;
+            color: black;
+            z-index: 10;
+          
+           
+            cursor: pointer;
+
+          
+        }
+
+    
+        &-items:hover{
+            cursor: pointer;
+
+            filter: none;
+        }
+
+    }//end gallery
+
+    &__button{
+        margin-top: 5.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+
+}
+
+.projects__gallery-view:hover{
+    // background-color: red;
+    // visibility: hidden;
+}
+.display{
+    display: hidden;
+    background-color: yellow;
+}
+
+.show{
+    display: grid;
+}
+
+.scale{
+    transition: transform .3s; /* Animation */
+    
+}
+
+.scale:hover{
+    transform: scale(1.2);
+    
+}

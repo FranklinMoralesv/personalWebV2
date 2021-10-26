@@ -21,6 +21,7 @@ li{
   position: absolute;
   color: var(--tags);
   font-family: var(--font-la-belle-aurore);
+  font-weight: 500;
   font-style: italic;
   font-size: 1.8rem;
   left: 2.6rem;
@@ -35,13 +36,12 @@ li{
 }
 
 .tag::before{
-  // margin-top: -2rem;
+ 
   margin-top: -3rem;
 }
 
 .tag::after{
-  // margin-top: 4.5rem;
-  margin-top: 3rem;
+  // margin-top: 6rem;
 }
 
 
@@ -51,16 +51,14 @@ li{
 
 .tag-paragraph::after{
   content: '</p>';
-  
-    
-   
+  margin-top: 3rem;
 }
 
 .tag-heading::before{
-  content: '<h>';
+  content: '<h1>';
 }
 .tag-heading::after{
-  content: '</h>';
+  content: '</h1>';
 
 }
 

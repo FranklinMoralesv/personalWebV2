@@ -1,0 +1,24 @@
+.about{
+    
+    &__image{
+        margin-top: 4rem;
+        border-radius: 2.5rem;
+        max-width: 50%; 
+        border: 1px solid var(--primary);
+        
+        background-color: var(--primary);
+
+        &-container{
+            display: flex;
+            justify-content: center;
+            
+            position: relative;
+       
+        }
+    }
+
+    &__resume{
+        margin-top: 5.6rem;
+    }
+}
+

@@ -3,20 +3,12 @@
 .hero{
     // border: 1px solid green;
     min-height: 100vh;
-    padding: 9rem 3rem;
-    
     display: flex;
     flex-direction: column;
   
-    // align-items: center;
     justify-content: center;
 
-    @include breakpoint(large){
-        
-        margin-left: $spacer;
-
-    }
-
+   
     h1{
         margin: 0;
     }
@@ -40,8 +32,9 @@
             font-size: 8rem;
         }
     }
-    &__welcome{
+    &__welcome::after{
         // border: 1px solid red;
+        
     }
 
     &__text{
@@ -62,9 +55,9 @@
     }
 
     &__scroll-down{
-        // margin-top: 10rem;
+       
         border:  1px solid blue;
-      
+
         position: relative;
         bottom: 90vh;
         display: flex;

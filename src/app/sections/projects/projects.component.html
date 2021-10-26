@@ -1,0 +1,34 @@
+<section class="projects tag" id="projects">
+
+    <app-subheading subheading="My Portfolio"></app-subheading>
+    
+    <p class=" text container tag tag-paragraph">Here is a sample of the personal projects I have done, to practice specific topics</p>
+
+
+    <ul class="projects__gallery container" >
+        <li *ngFor="let project of projects |slice:0:projectsToShow ;let i=index" class="projects__gallery-items" (mouseleave)="onHoverOut($event)" (mouseenter)="onHoverEnter($event)">
+                
+            <div class="projects__gallery-view" >
+                <p>View Project</p> 
+            </div>
+                <picture >
+                    <!-- <source srcset="../../../assets/capturaHeroesApp.webp" type="image/webp"> -->
+                    <img class="scale" loading="lazy" src={{project.urlImage}} >
+                </picture>
+               
+         </li>
+    </ul>
+
+    
+
+
+
+    <p class="text container tag tag-paragraph">Interested to see some more? Visit <a href="#" class="link">my projects page..</a></p>
+    
+
+    
+
+    <div class="projects__button container">
+        <button class="btn-outline btn-outline--primary">Show more!</button>
+    </div>
+</section>
