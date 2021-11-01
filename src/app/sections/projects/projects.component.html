@@ -1,4 +1,4 @@
-<section class="projects container" id="projects">
+<main class="projects container tag tag-main" id="projects">
 
     
     <app-subheading subheading="My Portfolio"></app-subheading>
@@ -15,7 +15,7 @@
             </div>
                 <picture>
                     <source class="projects__gallery-image" loading="lazy" srcset={{project.urlImageWebp![0]}} type="image/webp">
-                    <img class="projects__gallery-image" loading="lazy" src={{project.urlImage![0]}} >
+                    <img class="projects__gallery-image" loading="lazy" src={{project.urlImage![0]}} alt={{project.title}}>
                 </picture>
          </li>
     </ul>
@@ -87,4 +87,4 @@
     
 
     
-</section>
+</main>

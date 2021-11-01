@@ -2,6 +2,7 @@
 @use '../../../scss/global/variables'  as *;
 .projects{
     position: relative;
+    border: 1px solid green;
     
     &__gallery{
         
@@ -224,11 +225,21 @@
 }
 @include breakpoint(medium) {
      .overlay{
-         width: auto;
-         
+         width: auto; 
      }
 }
 
+.tag-main::before{
+    content: '<main>';
+    top: 5.5rem;
+    left: 2rem;
+  
+}
+.tag-main::after{
+    content: '</main>';
+    bottom: 5.5rem;
+    left: 2rem;
+}
 
 
   .showImage{
