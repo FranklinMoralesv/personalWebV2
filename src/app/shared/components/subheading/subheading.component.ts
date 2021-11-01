@@ -1,14 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit,} from '@angular/core';
 
 @Component({
   selector: 'app-subheading',
   templateUrl: './subheading.component.html',
-  styleUrls: ['./subheading.component.scss']
+  styleUrls: ['./subheading.component.scss'],
+
 })
-export class SubheadingComponent implements OnInit {
+export class SubheadingComponent implements OnInit, OnChanges {
 
   @Input () subheading:string='Subheading empty';
+  @Input () ish2:boolean=true;
+  @Input () textCenter:boolean=false;
+
+
   constructor() { }
+  
 
   caracteres:string[]=[];
 
@@ -21,6 +27,9 @@ export class SubheadingComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.stringToCharacters()
+  }
+  ngOnChanges(): void {
     this.stringToCharacters()
   }
 

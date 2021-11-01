@@ -7,6 +7,9 @@ h3,p {
   margin: 0;
 //   line-height: 1.1;
 }
+ p{
+   position: relative;
+ }
 
 a,
 a:visited,
@@ -17,6 +20,7 @@ li{
   list-style: none;
 }
 
+/*TagsV2*/
 .tag::before,.tag::after{
   position: absolute;
   color: var(--tags);
@@ -24,43 +28,32 @@ li{
   font-weight: 500;
   font-style: italic;
   font-size: 1.8rem;
-  left: 2.6rem;
+ 
 }
 
 @include breakpoint(large){
   .tag::before,.tag::after{
     
     font-size: 1.8rem;
-    left: 2.6rem+$spacer;
+    // left: 2.6rem+$spacer;
   }
 }
 
-.tag::before{
- 
-  margin-top: -3rem;
-}
-
-.tag::after{
-  // margin-top: 6rem;
-}
-
-
 .tag-paragraph::before{
   content: '<p>';
+  top: -2.2rem;
 }
 
 .tag-paragraph::after{
   content: '</p>';
-  margin-top: 3rem;
+  // margin-top: 3rem;
+  bottom: -2.5rem;
+  
+  left: 0;
 }
 
-.tag-heading::before{
-  content: '<h1>';
-}
-.tag-heading::after{
-  content: '</h1>';
 
-}
+
 
 
 

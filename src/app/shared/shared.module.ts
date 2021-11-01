@@ -6,7 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SubheadingComponent } from './components/subheading/subheading.component';
 import { HoverClassDirective } from './directives/hover-class.directive';
-
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
@@ -15,7 +15,10 @@ import { HoverClassDirective } from './directives/hover-class.directive';
     SidebarComponent,
     MenuComponent,
     SubheadingComponent,
-    HoverClassDirective
+    HoverClassDirective,
+    SpinnerComponent,
+  
+   
   ],
   imports: [
     CommonModule
@@ -25,7 +28,9 @@ import { HoverClassDirective } from './directives/hover-class.directive';
    SidebarComponent,
    MenuComponent,
    SubheadingComponent,
-   HoverClassDirective
+   HoverClassDirective,
+   SpinnerComponent
+  
   ]
 })
 export class SharedModule { }

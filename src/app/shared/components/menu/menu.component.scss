@@ -49,6 +49,8 @@
             border-bottom: 1px solid var(--gray);
         }
 
+       
+
     }
 
 
@@ -57,16 +59,17 @@
         // border: 1px solid pink;
         text-align:center;
         justify-content: center;
-        color: var(--gray);
+        color: white;
         margin-bottom: 2rem;
 
         a{
             margin:auto 1rem;
         }
 
-        a:visited{
-            color: var(--gray);
+        a,a:visited{
+            color: white;
         }
+        
         
     }
 

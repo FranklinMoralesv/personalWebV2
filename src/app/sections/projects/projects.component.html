@@ -1,34 +1,90 @@
-<section class="projects tag" id="projects">
+<section class="projects container" id="projects">
 
-    <app-subheading subheading="My Portfolio"></app-subheading>
     
-    <p class=" text container tag tag-paragraph">Here is a sample of the personal projects I have done, to practice specific topics</p>
+    <app-subheading subheading="My Portfolio"></app-subheading>
+  
+    
+    <p class="text tag tag-paragraph ">Here is a sample of the personal projects I have done, to practice specific topics</p>
 
 
-    <ul class="projects__gallery container" >
-        <li *ngFor="let project of projects |slice:0:projectsToShow ;let i=index" class="projects__gallery-items" (mouseleave)="onHoverOut($event)" (mouseenter)="onHoverEnter($event)">
+    <ul class="projects__gallery containr" >
+        <li *ngFor="let project of projects |slice:0:projectsToShow ;let i=index" class="projects__gallery-items"  >
                 
-            <div class="projects__gallery-view" >
+            <div class="projects__gallery-view animate__animated animate__zoomIn animate__faster" (click)="showProject(project)">
                 <p>View Project</p> 
             </div>
-                <picture >
-                    <!-- <source srcset="../../../assets/capturaHeroesApp.webp" type="image/webp"> -->
-                    <img class="scale" loading="lazy" src={{project.urlImage}} >
+                <picture>
+                    <source class="projects__gallery-image" loading="lazy" srcset={{project.urlImageWebp![0]}} type="image/webp">
+                    <img class="projects__gallery-image" loading="lazy" src={{project.urlImage![0]}} >
                 </picture>
-               
          </li>
     </ul>
 
+
+
+    <p class="text  tag tag-paragraph">Interested to see some more? Visit <a href="#" class="link">my projects page..</a></p>
     
 
-
-
-    <p class="text container tag tag-paragraph">Interested to see some more? Visit <a href="#" class="link">my projects page..</a></p>
-    
-
-    
 
     <div class="projects__button container">
         <button class="btn-outline btn-outline--primary">Show more!</button>
     </div>
+
+    <div class="overlay " *ngIf="showOverlay==true">
+     
+        <button class="btn-outline btn-outline--secondary overlay__buttons--close" (click)="closeOverlay()" aria-label="close"><span class="iconify overlay__buttons-icons" data-icon="ant-design:close-outlined"></span></button>
+        <div class="overlay__title">
+            <app-subheading  [ish2]="false" [textCenter]="true" subheading={{overlayProject.title}}></app-subheading>
+        </div>
+        
+        <div class="overlay__image">
+
+            <div [ngClass]="{'showImage': isImageLoaded,'hideImage':!isImageLoaded}">
+                <picture>
+                    <!-- <source srcset=""> -->
+                    <source loading="lazy" srcset={{overlayProject.urlImageWebp![currentIndexImage]}}  type="image/webp">
+                    <img loading="lazy" (load)="onImageLoad()" src={{overlayProject.urlImage![currentIndexImage]}} alt="{{overlayProject.title}}">
+                </picture>
+            </div>
+           
+           
+
+            <app-spinner class="spinner" *ngIf="!isImageLoaded"></app-spinner>
+          
+
+            
+        </div>
+
+        <div class="overlay__buttons">
+            <button  class="btn-outline btn-outline--primary" (click)="previousImage()" aria-label="previous"><span class="iconify overlay__buttons-icons overlay__buttons-icons--rotate" data-icon="grommet-icons:link-next"></span></button>
+            <button  class="btn-outline btn-outline--primary" (click)="nextImage()" aria-label="next"><span class="iconify overlay__buttons-icons" data-icon="grommet-icons:link-next"></span></button>
+        </div>
+        <p class="overlay__text text tag tag-paragraph">{{overlayProject.description}}</p>
+        
+     
+        <ul class="overlay__languages-technologies">
+            <li *ngFor="let language of overlayProject.languagesT">
+                <div class="overlay__languages-technologies__container">
+                    <span class="iconify keyword" data-icon="carbon:condition-point"></span><span class="overlay__languages-technologies__text text">{{language}}</span>
+                </div>
+            </li> 
+        </ul>
+        
+        <div class="overlay__links">
+            <a href={{overlayProject.git}} target="_blank" rel="noopener noreferrer">
+                <span class="iconify overlay__social-icon" data-icon="akar-icons:github-fill" aria-label="go github"></span>
+            </a>
+            <a href={{overlayProject.page}}  target="_blank" rel="noopener noreferrer">
+                <span class="iconify overlay__social-icon" data-icon="fa:external-link" aria-label="go page"></span>
+            </a>
+        </div>
+
+        
+    </div>
+    <span *ngIf="showOverlay==true" class="overlay__background" (click)="closeOverlay()"></span>
+
+
+    
+
+    
 </section>

@@ -1,4 +1,16 @@
 
-<h1 class="subheading container tag subheading__tag" aria-label="My Portfolio">
-    <span *ngFor="let caracter of caracteres; let i=index">{{caracter}}</span>
-</h1>
+<ng-container *ngIf="ish2; else h3">
+    <h2 class="subheading  tag subheading__tag"  [ngClass]="{'text-center': textCenter }" >
+        <span *ngFor="let caracter of caracteres; let i=index">{{caracter}}</span>
+    </h2>
+</ng-container>
+<ng-template #h3>
+    <h3 class="subheading  tag subheading__tag subheading__tag--h3"  [ngClass]="{'text-center': textCenter }">
+        <span *ngFor="let caracter of caracteres; let i=index">{{caracter}}</span>
+    </h3>
+</ng-template>
+
+
+
+
+
