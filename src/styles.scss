@@ -66,6 +66,19 @@
     visibility: hidden;
 }
 
+.section-tags::before{
+    content: '<section>';
+    top: 5.5rem;
+    left: 2rem;
+}
+.section-tags::after{
+    content: '</section>';
+    bottom: 0;
+    left: 2rem;
+}
+
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scroll-bar::-webkit-scrollbar {
     display: none;

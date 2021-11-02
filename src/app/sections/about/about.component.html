@@ -1,19 +1,30 @@
-<section class="about container" id="about">
+<section class="about container tag section-tags" id="about">
     <app-subheading subheading="About Me"></app-subheading>
 
-    
-    <p class="about__text text tag tag-paragraph ">Hello! My name is Franklin, my main area of interest is front-end and I am skilled in creating intuitive and dynamic user experiences. Recently I have worked with several technologies, such as <span class="keyword">JavaScript (ES6+)</span>, <span class="keyword">TypeScript</span> and <span class="keyword">Angular</span>.</p>
-
-    <p class="about__text text tag tag-paragraph ">Additionally I have notions in <span class="keyword">graphic design</span>, <span class="keyword">video editing</span>, and game development in <span class="keyword">Unity</span> and <span class="keyword">Unreal Engine</span>.</p>
-
-    <div class="about__image-container">
-        <img class="about__image" src="../../../assets/images/yoCarnetFormal.png" alt="Franklin Morales image">
+    <div class="about__content">
+        <div>
+            <p class="about__text text tag tag-paragraph ">Hello! My name is Franklin, my main area of interest is front-end and I am skilled in creating intuitive and dynamic user experiences. Recently I have worked with several technologies, such as <span class="keyword">JavaScript (ES6+)</span>, <span class="keyword">TypeScript</span> and <span class="keyword">Angular</span>.</p>
+        
+            <p class="about__text text tag tag-paragraph ">Additionally I have notions in <span class="keyword">graphic design</span>, <span class="keyword">video editing</span>, and game development in <span class="keyword">Unity</span> and <span class="keyword">Unreal Engine</span>.</p>
+        </div>
+        <div class="about__image">
+           
+            <a href="../../../assets/cv_en.pdf" target="_blank" rel="noopener noreferrer" aria-label="franklin morales">
+                <picture>
+                    <source loading="lazy" srcset="../../../assets/images/yoCarnetFormal.png">
+                    <img loading="lazy" class="about__imag" src="../../../assets/images/yoCarnetFormal.png" alt="Franklin Morales image">
+                </picture>
+                <div class="about__image-background"></div>
+                <div class="about__image-overlay"></div>
+            </a>
+        </div>
     </div>
-
-    <p class="about__text text tag tag-paragraph ">Do you want to know more? take a look at <span class="keyword">my resume</span></p>
+    <p class="about__text text tag tag-paragraph ">Do you want to know more? take a look at <a class="link" href="../../../assets/cv_en.pdf" target="_blank" rel="noopener noreferrer">my resume</a></p>
 
     <div class="about__resume">
 
         <a href="../../../assets/cv_en.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline btn-outline--primary">Resume</a>
     </div>
+
+    <app-scroll-down class="about__scroll-down"></app-scroll-down>
 </section>

@@ -200,7 +200,7 @@ export class ProjectsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log('current Antes',this.currentIndexImage);
+    
   }
 
   
