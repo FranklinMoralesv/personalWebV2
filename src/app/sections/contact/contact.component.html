@@ -1,0 +1,67 @@
+<section class="contact container tag section-tags" id="contact">
+    <app-subheading subheading="Get In Touch"></app-subheading>
+
+    <div class="contact__layout">
+        <div>
+            <p class="text tag tag-paragraph">I am currently looking for a job opportunity as a front-end developer or game developer, where I can contribute my skills, knowledge and continue to develop professionally.</p>
+        
+            <p class="text tag tag-paragraph">
+                Contact me at 
+                <span class="contact__options">
+                    <span class="text"><span class="iconify contact__icon" data-icon="bx:bx-phone-call"></span> +58 424-899-21-40</span>
+                    <span class="text"><span class="iconify contact__icon" data-icon="ci:mail"></span><a class="link" href="mailto:franklinmoralesv@gmail.com"> franklinmoralesv@gmail.com</a></span>
+                </span>
+            </p>
+        
+            <form class="form" [formGroup]="myForm" (ngSubmit)="sendMessage()">
+                <div class="form__header">
+                    <div class="form__field">
+                        <label for="name" class="form__field-label" [ngClass]="{'form__field-label--writing': isWriting('name'),'form__field-label--warning':validateField('name')}">Name</label>
+                        <input formControlName="name" required class="form__field-input" id="name" type="text" [ngClass]="{'form__field-input--warning': validateField('name')}">
+                    </div>
+                    <div class="form__field">
+                        <label for="email" class="form__field-label" [ngClass]="{'form__field-label--writing': isWriting('email'),'form__field-label--warning':validateField('email')}">Email</label>
+                        <input formControlName="email"  required class="form__field-input" id="email" type="email" [ngClass]="{'form__field-input--warning': validateField('email')}">
+                    </div>
+                </div>
+                <div class="form__field">
+                    <label for="subject" class="form__field-label" [ngClass]="{'form__field-label--writing': isWriting('subject'),'form__field-label--warning':validateField('subject')}">Subject</label>
+                    <input formControlName="subject" required  class="form__field-input" id="subject" type="text" [ngClass]="{'form__field-input--warning': validateField('subject')}">
+                </div>
+                <div class="form__field">
+                    <label for="message" class="form__field-label" [ngClass]="{'form__field-label--writing': isWriting('message'),'form__field-label--warning':validateField('message')}">Message</label>
+                    <textarea formControlName="message" required class="form__field-input" id="message" [ngClass]="{'form__field-input--warning': validateField('message')}"></textarea>
+                </div>
+                <div class="form__buttom">
+                    <button class="btn-outline btn-outline--primary"   type="submit">Send Message!</button>
+                </div>
+            </form>
+            
+        </div>
+
+        <div class="map">
+            <div class="map__container" id="map"></div>
+
+            <div class="map__info">
+                <p class="map__info-text">Franklin Morales,
+                    <br>
+                    Barcelona, Venezuela
+                    <br>
+                    <br>
+                    <span class="keyword">+58 424 899 2140</span>
+                    <br>
+                    <br>
+                    <span class="keyword">franklinmoralesv@gmail.com</span>
+                </p>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+   
+</section>
+
+
+
+

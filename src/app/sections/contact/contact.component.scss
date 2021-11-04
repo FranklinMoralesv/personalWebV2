@@ -1,0 +1,176 @@
+@use '../../../scss/utilities' as *;
+.contact{
+   
+
+    position: relative;
+    
+    
+    @include breakpoint(xlarge) {
+        &__layout{
+            // position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5rem;
+        }
+        
+    
+    }
+
+    &__options{
+        display: block;
+        color: var(--primary);
+        margin-left: 3rem;
+        margin-top: 5rem;
+
+        span{
+            display: flex;
+            align-items: center;
+            gap:1rem;
+            margin-top: 0;
+        }
+
+    }
+
+    &__options-container{
+        position: relative;
+    }
+    
+    &__icon{
+        font-size: 3rem;
+    }
+
+    
+}
+
+.form{
+    margin-top: 6rem;
+    // border: 1px solid red;
+
+
+    &__field{
+        position: relative;
+        display: block;
+        padding: 0.2rem;
+
+        // border: 1px solid yellow;
+
+
+        &-input{
+            width: 100%;
+            background-color: var(--gray-background);
+            border: none;
+            padding: 2rem;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        &-input--warning{
+            border: 1px solid var(--secondary);
+        }
+
+        &-label{
+            position: absolute;
+            top: 44%;
+            left: 1.5rem;
+            // color: var(--gray);
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+
+        }
+
+        &-label--warning{
+            color:var(--secondary);
+        }
+        &-label--writing{
+            top: -15px;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        &-label--warning::before{
+            content: '* Field ';
+        }
+        &-label--warning::after{
+            content: ' required';
+        }
+
+
+    }
+
+    &__buttom{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        // border: 1px solid red;
+    }
+
+    @include breakpoint(medium) {
+        &__header{
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 1rem;
+        }
+   }
+
+    
+}
+
+
+
+.map{
+
+    position: relative;
+    
+    &__container{
+        margin-top: 4rem;
+        min-height: 30vh;
+        border-radius: 3rem;
+    }
+
+    @include breakpoint(xlarge) {
+        &__container{
+            margin-top: auto;
+            height: 100%;
+        }
+    }
+
+    
+    &__info{
+        position: absolute;
+        top: 1.5rem;
+        left: 1rem;
+        background: rgb(0,0,0,.8);
+        border-radius: 1rem;
+        
+
+        @include breakpoint(medium) {
+            top: 4.5rem;
+            left: 3rem;
+        }
+
+
+        &-text{
+            // margin: 0;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        @include breakpoint(medium) {
+            &-text{  
+                font-size: 1.4rem;
+            }
+        }
+        @include breakpoint(large) {
+            &-text{  
+                font-size: 1.6rem;
+            }
+        }
+ 
+        
+    }
+}
+
+
+
+
