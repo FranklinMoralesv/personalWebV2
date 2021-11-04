@@ -43,9 +43,9 @@
 }
 
 .form{
-    margin-top: 6rem;
+    margin-top: 8rem;
     // border: 1px solid red;
-
+    position: relative;
 
     &__field{
         position: relative;
@@ -96,6 +96,14 @@
         }
 
 
+    }
+
+    &__tags::before{
+        content: '<form>';
+        top: -4rem;
+    }
+    &__tags::after{
+        content: '</form>';
     }
 
     &__buttom{

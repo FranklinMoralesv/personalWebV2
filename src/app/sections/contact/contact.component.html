@@ -13,7 +13,7 @@
                 </span>
             </p>
         
-            <form class="form" [formGroup]="myForm" (ngSubmit)="sendMessage()">
+            <form class="form tag form__tags" [formGroup]="myForm" (ngSubmit)="sendMessage()">
                 <div class="form__header">
                     <div class="form__field">
                         <label for="name" class="form__field-label" [ngClass]="{'form__field-label--writing': isWriting('name'),'form__field-label--warning':validateField('name')}">Name</label>

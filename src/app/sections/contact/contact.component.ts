@@ -60,8 +60,8 @@ export class ContactComponent implements OnInit {
     //creando el marcador y agregando estilos
     const element=this.renderer.createElement('div');
 
-    this.renderer.setStyle(element,'width','150px');
-    this.renderer.setStyle(element,'height','150px');
+    this.renderer.setStyle(element,'width','220px');
+    this.renderer.setStyle(element,'height','220px');
     this.renderer.setStyle(element,'backgroundSize','100%');
     this.renderer.setStyle(element,'backgroundImage','url(../../../assets/images/markervssvg.svg)');
     this.renderer.setStyle(element,'backgroundRepeat','no-repeat');
@@ -75,7 +75,7 @@ export class ContactComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.initMap();
+     this.initMap();
   }
   }
 
