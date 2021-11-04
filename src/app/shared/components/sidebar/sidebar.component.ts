@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  sidebarStatus:boolean=true;
   constructor() { }
 
+  showSidebar(){
+    this.sidebarStatus=!this.sidebarStatus;
+  }
   ngOnInit(): void {
   }
 

@@ -75,7 +75,7 @@ export class ContactComponent implements OnInit {
   }
   ngOnInit(): void {
 
-     this.initMap();
+    //  this.initMap();
   }
   }
 

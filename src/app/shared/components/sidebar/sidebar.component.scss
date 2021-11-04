@@ -1,67 +1,20 @@
 @use '../../../../scss/utilities' as *;
+
 .sidebar{
-
-    z-index: 100;
+    
     position: fixed;
-    top: 2.4rem;
-    right: 2.2rem;
-    &__container{
-        display: flex;
-        flex-direction: column;
-        height: 10rem;
-        justify-content: space-between;
-        // border: solid blue;
-    }
-    &__button{
-        // border: 1px solid red;
-        background: rgb(0, 0, 0,0.3);
-        color: white;
-        font-size: 4rem;
-        border-radius: 1rem;
-        
-        border: none;
-        
-    }
+    right: 0;
+    top: 0;
+    height: 100vh;
+    border: 1px solid red;
+    width: 60vw;
+    background-color: var(--background);
 
-    @include breakpoint(large){
-        &__button{
-            display: none;
-        }
+    .logo__image{
+        max-width: 100%;
     }
-
-    &__sound{
-        padding: 0.5rem;
-        background: rgb(0, 0, 0,0.3);
-        color:var(--primary);
-        border-radius: 1rem;
-        font-family: var(--font-open-sans);
-        font-size: 1.3rem;
-        border: none;
-       
-
-        &-text{
-            display: none;
-            margin: auto 1rem;
-        }
-        @include breakpoint(large){
-           
-            &-text{
-                display: flex;
-            }
-        }
-  
-    }
-
-    @include breakpoint(large){
-        &__sound{
-            font-size: 2.3rem;
-        }
-    }
-
-    &__sound--off{
-        color:var(--secondary);
-    }
+    
 }
 
 
-/*Prueba*/
+

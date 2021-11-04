@@ -7,6 +7,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SubheadingComponent } from './components/subheading/subheading.component';
 import { HoverClassDirective } from './directives/hover-class.directive';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LogoComponent } from './components/logo/logo.component';
+
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     SubheadingComponent,
     HoverClassDirective,
     SpinnerComponent,
+    LogoComponent
+
   
    
   ],
@@ -29,7 +33,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
    MenuComponent,
    SubheadingComponent,
    HoverClassDirective,
-   SpinnerComponent
+   SpinnerComponent,
+   LogoComponent
   
   ]
 })
