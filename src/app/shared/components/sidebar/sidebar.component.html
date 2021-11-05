@@ -1,3 +1,37 @@
-<div class="sidebar">
-    <app-logo></app-logo>
+<div class="sidebar animate__animated " #sidebar>
+   
+    <div class="sidebar__content">
+        <app-menu [isSideMenu]="true"></app-menu>
+    </div>
+   
 </div>
+<div class="sidebar__background" *ngIf="isSidebarActive" (click)="toggleSidebar()"></div>
+
+<div class="control">
+    <div class="control__container">
+    
+        <button aria-label="menu" class="control__button" (click)="toggleSidebar()">
+            
+            <div *ngIf="!isSidebarActive">
+                <span class="iconify control__button-icon" data-icon="bx:bx-menu-alt-right"></span>
+            </div>
+            <div *ngIf="isSidebarActive">
+
+                <span class="iconify control__button-icon" data-icon="ant-design:close-outlined"  *ngIf="isSidebarActive"></span>
+            </div>
+        
+        </button>
+    
+        <button class="control__sound flex space-between align-center" (click)="toggleAudio()" [ngClass]="{'control__sound--off': !isBackgroundAudioActive}">
+            <span class="iconify" data-icon="akar-icons:sound-on">
+            </span>
+            <span class="control__sound-text">Sound</span>
+            <span>{{isBackgroundAudioActive?'ON':'OFF'}}</span>
+
+        </button>
+    </div>
+</div>
+
+<audio #backgroundAudio loop preload="none">
+    <source src="../../../../assets/sounds/background.mp3" type="audio/mpeg">
+</audio>

@@ -1,12 +1,5 @@
-<div class="menu">
+<div class="menu" [ngClass]="{'side-menu': isSideMenu}">
 
-    <!-- <div class="logo">
-        <picture>
-            <source loading="lazy" srcset="../../../../assets/images/logo.webp" type="image/webp">
-            <img loading="lazy" class="logo__image" src="../../../../assets/images/logo.png" alt="logo FMV">
-        </picture>
-        <p class="logo__text">Web Developer</p>
-    </div> -->
     <app-logo></app-logo>
   
     <nav class="menu__nav">

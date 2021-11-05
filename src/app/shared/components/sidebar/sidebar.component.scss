@@ -1,20 +1,121 @@
 @use '../../../../scss/utilities' as *;
 
 .sidebar{
-    
+
+    display: none;
     position: fixed;
     right: 0;
     top: 0;
     height: 100vh;
-    border: 1px solid red;
     width: 60vw;
     background-color: var(--background);
-
-    .logo__image{
-        max-width: 100%;
-    }
+    z-index: 1000;
     
+    animation-duration: .5s;
+
+   
+    @include breakpoint-down(medium) {
+        &__background{
+            position:fixed;
+            top: 0; 
+            opacity:0.76; 
+            background: #000; 
+            width:100%;
+            height:100%; 
+            z-index:100;
+            cursor: pointer;
+        } 
+    }
+
+    &__buttons{
+        position: fixed;
+        top: 2.4rem;
+        right: 2.2rem;
+        z-index: 1001;
+        
+
+        border: 1px solid yellow;
+    }
 }
 
+@include breakpoint-down(medium) {
+     .show-sidebar{
+         display: block;
+     }
+
+}
+
+.hide-sidebar{
+    display: none;
+}
+
+.control{
+
+    z-index: 1001;
+    position: fixed;
+    top: 2.4rem;
+    right: 2.2rem;
+    &__container{
+        display: flex;
+        flex-direction: column;
+        height: 10rem;
+        justify-content: space-between;
+        // border: solid blue;
+    }
+    &__button{
+        // border: 1px solid red;
+        background: rgb(0, 0, 0,0.3);
+        color: white;
+        
+        border-radius: 1rem;
+        
+        border: none;
+
+        &-icon{
+            font-size: 4rem;
+            transition: all .3s;
+        }
+        
+    }
+
+    @include breakpoint(large){
+        &__button{
+            display: none;
+        }
+    }
+
+    &__sound{
+        padding: 0.5rem;
+        background: rgb(0, 0, 0,0.3);
+        color:var(--primary);
+        border-radius: 1rem;
+        font-family: var(--font-open-sans);
+        font-size: 1.3rem;
+        border: none;
+       
+
+        &-text{
+            display: none;
+            margin: auto 1rem;
+        }
+        @include breakpoint(large){
+           
+            &-text{
+                display: flex;
+            }
+        }
+  
+    }
+
+    @include breakpoint(large){
+        &__sound{
+            font-size: 2.3rem;
+        }
+    }
+
+    &__sound--off{
+        color:var(--secondary);
+    }
+}
 
 

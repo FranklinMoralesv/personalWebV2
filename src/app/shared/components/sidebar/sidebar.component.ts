@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,13 +7,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  sidebarStatus:boolean=true;
-  constructor() { }
+  isSidebarActive:boolean=false;
+  isBackgroundAudioActive:boolean=false;
 
-  showSidebar(){
-    this.sidebarStatus=!this.sidebarStatus;
+
+  @ViewChild('sidebar') sidebarElement!:ElementRef;
+  @ViewChild('backgroundAudio') backgroundAudioElement!:ElementRef;
+  constructor(private renderer:Renderer2) { }
+
+  toggleSidebar(){
+
+    this.isSidebarActive=!this.isSidebarActive;
+
+    if(this.isSidebarActive){
+      this.renderer.addClass(this.sidebarElement.nativeElement,'animate__slideInRight');
+      this.renderer.addClass(this.sidebarElement.nativeElement,'show-sidebar');
+
+      this.renderer.removeClass(this.sidebarElement.nativeElement,'animate__slideOutRight');
+    }else{
+      this.renderer.addClass(this.sidebarElement.nativeElement,'animate__slideOutRight');
+      
+    }
+  
   }
+
+  toggleAudio(){
+    this.isBackgroundAudioActive=!this.isBackgroundAudioActive;
+
+    if(this.isBackgroundAudioActive){
+      this.backgroundAudioElement.nativeElement.play();
+    }else{
+      this.backgroundAudioElement.nativeElement.pause();
+    }
+  }
+
   ngOnInit(): void {
+    
   }
 
 }
