@@ -89,9 +89,6 @@
         filter: none;
     }
 
-
-   
-   
     @include breakpoint(medium) {
          &__image{
               margin-left: 4rem;
@@ -102,12 +99,5 @@
 
     &__resume{
         margin-top: 5.6rem;
-    }
-
-
-    @include breakpoint-down(medium) {
-        &__scroll-down{
-            display: none;
-        }
     }
 }

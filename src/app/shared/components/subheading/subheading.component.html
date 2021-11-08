@@ -1,12 +1,14 @@
 
 <ng-container *ngIf="ish2; else h3">
-    <h2 class="subheading  tag subheading__tag"  [ngClass]="{'text-center': textCenter }" >
-        <span *ngFor="let caracter of caracteres; let i=index">{{caracter}}</span>
+    <h2 class="subheading  tag subheading__tag inline-flex"  [ngClass]="{'text-center': textCenter }" >
+        <span *ngFor="let character of characters;let i=index" class="subheading__character" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','warn']" [ngClass]="{'ml-2': character===' '}">
+            {{character}}
+        </span>
     </h2>
 </ng-container>
 <ng-template #h3>
     <h3 class="subheading  tag subheading__tag subheading__tag--h3"  [ngClass]="{'text-center': textCenter }">
-        <span *ngFor="let caracter of caracteres; let i=index">{{caracter}}</span>
+        <span *ngFor="let character of characters">{{character}}</span>
     </h3>
 </ng-template>
 

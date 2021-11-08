@@ -16,13 +16,13 @@ export class SubheadingComponent implements OnInit, OnChanges {
   constructor() { }
   
 
-  caracteres:string[]=[];
+  characters:string[]=[];
 
   stringToCharacters(){
 
-    this.caracteres=this.subheading.split('');
+    this.characters=this.subheading.split('');
 
-    // console.log(this.caracteres);
+   
     
   }
   

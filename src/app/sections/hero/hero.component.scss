@@ -16,7 +16,8 @@
     &__title{
         font-size: 4rem;
         font-family: var(--font-monserrat);
-        white-space: nowrap;
+        // white-space: nowrap;
+        
         line-height: 1;
 
         &--blue{
@@ -25,6 +26,20 @@
         &--red{
             color: var(--secondary);
         }
+
+        &-word{
+           transition: 0.8s color;
+        }
+        &-word:hover{
+            color: var(--primary);
+        }
+        &-word--warn:hover{
+            color: var(--secondary);
+        }
+
+
+
+       
         
     }
 
@@ -104,10 +119,9 @@
   .tag-heading--close::after{
     content: '</h1>';
     bottom: -2rem;
-    
   }
 
-
+  
 
 
   
@@ -115,5 +129,7 @@
 
 
 /*Pruebas*/
-
-
+.border{
+    border:  1px solid red;
+  
+}

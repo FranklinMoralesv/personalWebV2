@@ -1,19 +1,46 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[hover]'
 })
 export class HoverClassDirective {
-  @Input () onHoverClass:string='';
+  @Input () toogleHoverClass:string[]=[''];
+  
 
-  constructor( public elementRef:ElementRef) {console.log('elemnto',elementRef) }
+
+  constructor( private elementRef:ElementRef,private renderer:Renderer2) {}
+
 
   @HostListener('mouseenter') onMouseEnter(){
-    this.elementRef.nativeElement.classList.add(this.onHoverClass);
-  }
 
-  @HostListener('mouseleave') onMouseLeave() {
-    this.elementRef.nativeElement.classList.remove(this.onHoverClass);
+    this.toogleHoverClass.forEach((classToAdd)=>{
+      this.renderer.addClass(this.elementRef.nativeElement,classToAdd);
+    });
+  
+  
   }
+  @HostListener('animationend') onAnimationEnd() {
+
+   
+    //TODO:Refactorizar la forma como se remueve la animacion inicial
+    //Removiendo la animacion inicial
+    this.renderer.removeClass(this.elementRef.nativeElement,'animate__bounceIn');
+    // this.renderer.addClass(this.elementRef.nativeElement,'delay-0');
+    this.renderer.addClass(this.elementRef.nativeElement,'delay-0')
+
+    this.toogleHoverClass.forEach((classToRemove)=>{
+      this.renderer.removeClass(this.elementRef.nativeElement,classToRemove);
+    });
+    
+  
+    
+  }
+  
+
+  
+  // @HostListener('mouseleave') onMouseLeave() {
+  //   this.elementRef.nativeElement.classList.remove(this.onHoverClass);
+  // }
+
 
 }

@@ -13,20 +13,26 @@
         <button aria-label="menu" class="control__button" (click)="toggleSidebar()">
             
             <div *ngIf="!isSidebarActive">
-                <span class="iconify control__button-icon" data-icon="bx:bx-menu-alt-right"></span>
+                <span class="iconify control__button-icon    " data-icon="bx:bx-menu-alt-right"></span>
             </div>
             <div *ngIf="isSidebarActive">
 
-                <span class="iconify control__button-icon" data-icon="ant-design:close-outlined"  *ngIf="isSidebarActive"></span>
+                <span class="iconify control__button-icon   " data-icon="ant-design:close-outlined"  *ngIf="isSidebarActive"></span>
             </div>
-        
+           
         </button>
-    
+        <!--Auidio controls-->
         <button class="control__sound flex space-between align-center" (click)="toggleAudio()" [ngClass]="{'control__sound--off': !isBackgroundAudioActive}">
-            <span class="iconify" data-icon="akar-icons:sound-on">
-            </span>
+            <div *ngIf="isBackgroundAudioActive">
+                <span class="iconify icons" data-icon="akar-icons:sound-on"></span>
+            </div>
+            <div *ngIf="!isBackgroundAudioActive">
+                <span class="iconify icons" data-icon="akar-icons:sound-off"></span>
+            </div>
+            
             <span class="control__sound-text">Sound</span>
             <span>{{isBackgroundAudioActive?'ON':'OFF'}}</span>
+
 
         </button>
     </div>

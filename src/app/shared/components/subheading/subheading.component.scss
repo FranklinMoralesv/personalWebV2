@@ -9,8 +9,16 @@
     font-family: var(--font-monserrat);
    
     padding: 1rem 0;
-
    
+
+    &__character{
+        transition: 0.5s color;
+    }
+    &__character:hover{
+       color: var(--secondary);
+    }
+    
+    
 
     // border: 1px solid red;
 
@@ -44,6 +52,8 @@
         font-size: 6.5rem;
         
     }
+
+
 
 
 }

@@ -5,7 +5,23 @@
     writing-mode: vertical-rl;
     position: absolute;
     bottom: 1rem;
+    animation-iteration-count: infinite;
+  
 }
 .scroll-down--right{
     right: 2rem;
+}
+
+
+.shake{
+    animation: .5s shaker infinite alternate-reverse linear;
+}
+
+@keyframes shaker{
+    from {
+        transform: translateY(-1rem);
+    }
+    to{
+        transform: translateY(1rem);
+    }
 }
