@@ -22,7 +22,7 @@
            
         </button>
         <!--Auidio controls-->
-        <button class="control__sound flex space-between align-center" (click)="toggleAudio()" [ngClass]="{'control__sound--off': !isBackgroundAudioActive}">
+        <button class="control__sound flex space-between align-center animate__animated animate__fadeInRight delay-2000" (click)="toggleAudio()" [ngClass]="{'control__sound--off': !isBackgroundAudioActive}">
             <div *ngIf="isBackgroundAudioActive">
                 <span class="iconify icons" data-icon="akar-icons:sound-on"></span>
             </div>
