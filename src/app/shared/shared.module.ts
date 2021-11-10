@@ -8,6 +8,7 @@ import { SubheadingComponent } from './components/subheading/subheading.componen
 import { HoverClassDirective } from './directives/hover-class.directive';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
 
 
 
@@ -19,7 +20,8 @@ import { LogoComponent } from './components/logo/logo.component';
     SubheadingComponent,
     HoverClassDirective,
     SpinnerComponent,
-    LogoComponent
+    LogoComponent,
+    ObserveVisibilityDirective
 
   
    
@@ -34,7 +36,8 @@ import { LogoComponent } from './components/logo/logo.component';
    SubheadingComponent,
    HoverClassDirective,
    SpinnerComponent,
-   LogoComponent
+   LogoComponent,
+   ObserveVisibilityDirective
   
   ]
 })

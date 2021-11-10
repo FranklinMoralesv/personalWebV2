@@ -19,6 +19,9 @@ export class ContactComponent implements OnInit {
     subject:['',[Validators.required]],
     message:['',[Validators.required]],
   });
+  sectionIsInSight:boolean=false;
+  formIsInSight:boolean=false;
+  
 
   constructor(
     private fb:FormBuilder,
@@ -73,8 +76,15 @@ export class ContactComponent implements OnInit {
     setLngLat([-64.68298232692187,10.148975277462975])
     .addTo(map);
   }
-  ngOnInit(): void {
+  
+  onDisplaySection(){
+    this.sectionIsInSight=true;
+  }
+  onDisplayForm(){
+    this.formIsInSight=true;
+  }
 
+  ngOnInit(): void {
     //  this.initMap();
   }
   }

@@ -178,7 +178,23 @@
         
     }
 }
+.section-tags::after{
+    content: none;
+}
 
-
+.section-tag::after{
+    content: '</section>';
+    bottom: 0;
+}
+.body-tag::after{
+    content: '</body>';
+    bottom: -6rem;
+    left: 2rem;
+}
+.html-tag::after{
+    content: '</html>';
+    bottom: -9rem;
+    left: 1rem;
+}
 
 

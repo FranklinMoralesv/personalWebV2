@@ -1,14 +1,15 @@
-<main class="projects container tag tag-main" id="projects">
+<main class="projects container tag tag-main" observeVisibility  (onDisplay)="onDisplay()"  id="projects">
 
     
-    <app-subheading subheading="My Portfolio"></app-subheading>
+    <app-subheading  subheading="My Portfolio"></app-subheading>
+   
+    
+    <p class="text tag tag-paragraph animate__animated delay-300" [ngClass]="{'animate__fadeIn': sectionIsInSight}">Here is a sample of the personal projects I have done, to practice specific topics</p>
+
+
   
-    
-    <p class="text tag tag-paragraph ">Here is a sample of the personal projects I have done, to practice specific topics</p>
-
-
-    <ul class="projects__gallery containr" >
-        <li *ngFor="let project of projects |slice:0:projectsToShow ;let i=index" class="projects__gallery-items"  >
+    <ul class="projects__gallery" #gallery observeVisibility  (onDisplay)="initialAnimation()">
+        <li *ngFor="let project of projects |slice:0:projectsToShow" class="projects__gallery-items animate__animated"  >
                 
             <div class="projects__gallery-view animate__animated animate__zoomIn animate__faster" (click)="showProject(project)">
                 <p>View Project</p> 
@@ -27,14 +28,14 @@
 
 
     <div class="projects__button container">
-        <button class="btn-outline btn-outline--primary">Show more!</button>
+        <button class="btn-outline btn-outline--primary" (click)="showMore()">{{projectsToShow==4?'Show More!':'Show Less!'}}</button>
     </div>
 
     <div class="overlay " *ngIf="showOverlay==true">
      
         <button class="btn-outline btn-outline--secondary overlay__buttons--close" (click)="closeOverlay()" aria-label="close"><span class="iconify overlay__buttons-icons" data-icon="ant-design:close-outlined"></span></button>
         <div class="overlay__title">
-            <app-subheading  [ish2]="false" [textCenter]="true" subheading={{overlayProject.title}}></app-subheading>
+            <app-subheading [isH3]="true" subheading={{overlayProject.title}}></app-subheading>
         </div>
         
         <div class="overlay__image">

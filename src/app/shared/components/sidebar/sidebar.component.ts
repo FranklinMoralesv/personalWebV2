@@ -40,7 +40,7 @@ export class SidebarComponent implements OnInit {
     
       
     }
-    console.log('activo',this.isSidebarActive);
+    // console.log('activo',this.isSidebarActive);
   
   }
 

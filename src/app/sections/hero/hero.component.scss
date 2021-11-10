@@ -68,6 +68,7 @@
     &__button{
         margin-top: 5.1rem;
     }
+    
 
     &__scroll-down{
        
@@ -132,4 +133,12 @@
 .border{
     border:  1px solid red;
   
+}
+
+.bg{
+    background-color: var(--primary);
+    width: 100%;
+    display: block;
+    border: 1px solid blue;
+    display: inline-block;
 }

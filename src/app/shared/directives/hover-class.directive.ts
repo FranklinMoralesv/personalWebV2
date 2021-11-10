@@ -24,9 +24,9 @@ export class HoverClassDirective {
    
     //TODO:Refactorizar la forma como se remueve la animacion inicial
     //Removiendo la animacion inicial
-    this.renderer.removeClass(this.elementRef.nativeElement,'animate__bounceIn');
+    // this.renderer.removeClass(this.elementRef.nativeElement,'animate__bounceIn');
     // this.renderer.addClass(this.elementRef.nativeElement,'delay-0');
-    this.renderer.addClass(this.elementRef.nativeElement,'delay-0')
+    // this.renderer.addClass(this.elementRef.nativeElement,'delay-0')
 
     this.toogleHoverClass.forEach((classToRemove)=>{
       this.renderer.removeClass(this.elementRef.nativeElement,classToRemove);

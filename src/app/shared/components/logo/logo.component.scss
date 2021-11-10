@@ -6,6 +6,22 @@
     align-items: center;
     background-color: black;
     height: 20rem;
+
+    &__text{
+        font-size: 1.2rem;
+        color: white;
+        text-align: center;
+       
+    }
+    @include breakpoint(large) {
+    
+        .logo__text{
+            font-size: 1.4rem;
+        }
+    }
+    
+
+    
 }
 
 .logo__image{
@@ -13,14 +29,5 @@
     max-width: 100%;
 }
 
-.logo__text{
-    font-size: 1.2rem;
-}
-@include breakpoint(large) {
-    
-    .logo__text{
-        font-size: 1.2rem;
-       
-    }
-}
+
 
