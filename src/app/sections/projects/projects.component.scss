@@ -164,6 +164,8 @@
         display: flex;
         justify-items: center;
         justify-content: center;
+        text-align: center;
+      
         
         
       
@@ -190,6 +192,11 @@
         border-radius: 1.2rem;
         padding: 1rem;
     }
+
+    &__buttons--close:hover{
+       background-color: var(--secondary);
+    }
+  
     
 
     &__text{
@@ -224,9 +231,16 @@
         a,a:visited{
             color: var(--primary);
         }
+        a:hover{
+            color: darken($color: #08FDD8, $amount: 20%);
+        }
 
        
         
+    }
+
+    &__bg{
+        background-color: #e8e8e8;
     }
 
 
@@ -283,3 +297,4 @@
      
     }
 }
+

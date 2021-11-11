@@ -38,7 +38,7 @@
             <app-subheading [isH3]="true" subheading={{overlayProject.title}}></app-subheading>
         </div>
         
-        <div class="overlay__image">
+        <div class="overlay__image" [ngClass]="{'overlay__bg': currentIndexImage==0}">
 
             <div [ngClass]="{'showImage': isImageLoaded,'hideImage':!isImageLoaded}">
                 <picture>
