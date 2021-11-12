@@ -1,27 +1,45 @@
-# PersonalWebV2
+[<img src="capturePersonalWeb.png">](https://franklinmv.netlify.app/)
+# PersonalWeb
+
+This *PersonalWeb* project was made with the purpose of putting into practice basic concepts in web development with Angular Framework.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
 ## Development server
 
+```sh
+  ng serve
+```
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Building and Running for Production
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Install the Angular CLI
 
-## Build
+   ```sh
+   npm install -g @angular/cli
+   ```
+2. Install dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```sh   
+   npm install
+    ```
 
-## Running unit tests
+3. Run ng build
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```sh   
+   ng build
+    ```
 
-## Running end-to-end tests
+The build artifacts will be stored in the `dist/` directory.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Design
 
-## Further help
+The initial design is available on the figma platform  [Figma](https://www.figma.com/file/K88fooVFq3cyWI2BAMq5Ib/personalWebV2?node-id=0%3A1).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Attribution.
+
+The main objective of this project was to practice front-end web development and at the same time show the projects that I have worked on, but I was not sure which way to go, so I looked for examples of websites of talented people with a lot of more experience than me.
+
+So I found the portfolios of [jacek jeznach](https://jacekjeznach.com/) and [Brittany Chiang](https://brittanychiang.com/) that strongly influenced this project.
