@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit {
 
   @ViewChild('sidebar') sidebarElement!:ElementRef;
   @ViewChild('backgroundAudio') backgroundAudioElement!:ElementRef;
+  @Output() onMenuClick= new EventEmitter<string>();
  
   constructor(private renderer:Renderer2) { }
 
@@ -53,6 +54,10 @@ export class SidebarComponent implements OnInit {
     }else{
       this.backgroundAudioElement.nativeElement.pause();
     }
+  }
+
+  goToSection(sectionId:string){
+    this.onMenuClick.emit(sectionId);
   }
 
   ngOnInit(): void {

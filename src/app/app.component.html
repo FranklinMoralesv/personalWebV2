@@ -1,7 +1,6 @@
 <app-hero></app-hero>
-<app-sidebar></app-sidebar>
-<app-menu></app-menu>
-<app-projects></app-projects>
-<app-about></app-about>
-<app-contact></app-contact>
+<app-sidebar (onMenuClick)="goToSection($event)"></app-sidebar>
+<app-menu (onMenuClick)="goToSection($event)"></app-menu>
+<div style="border:1px solid red;height:0.5rem" observeVisibility (onDisplay)="loadProjectsSection('#projects',true)"></div>
+
 

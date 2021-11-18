@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, HostListener, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { Project } from 'src/app/shared/interfaces/projects';
+import { LazyLoadStatusService } from '../../shared/services/lazy-load-status.service';
 
 @Component({
   selector: 'app-projects',
@@ -154,7 +155,7 @@ export class ProjectsComponent implements OnInit {
     
     this.isImageLoaded=false;
   }
-///Metodo que se ejecuta al hacer click en el boton atras de la galeria
+  ///Metodo que se ejecuta al hacer click en el boton atras de la galeria
   previousImage(){
     const maxIndex:number=this.overlayProject.urlImage!.length-1
     
@@ -204,7 +205,11 @@ export class ProjectsComponent implements OnInit {
   }
 
 
-  constructor(private renderer:Renderer2) {}
+  constructor(
+    private renderer:Renderer2,
+    private lazy:LazyLoadStatusService,
+    private viewContainerRef:ViewContainerRef,
+    private cfr:ComponentFactoryResolver) {}
 
   ///Agrega las clases deseadas cuando la galeria esta a la vista
    initialAnimation(){
@@ -240,6 +245,19 @@ export class ProjectsComponent implements OnInit {
       this.projectsToShow=4;
     }else{
       this.projectsToShow=this.projects.length;
+    }
+  }
+
+  ///Carga perezozamente el componente
+  loadAboutSection(sectionId:string='#about'){
+    if(!this.lazy.aboutComponentIsLoaded){
+      ///Importa el componete solo si no ha sido importado previamente
+      this.lazy.loadAboutSection()
+      .then((lazyComponent)=>{
+        this.viewContainerRef.createComponent(this.cfr.resolveComponentFactory(lazyComponent));
+        this.lazy.aboutComponentIsLoaded=true;
+        // console.log('About loaded From Visibility');
+      });
     }
   }
   ngOnInit(): void {

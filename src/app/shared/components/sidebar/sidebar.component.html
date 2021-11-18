@@ -1,7 +1,7 @@
 <div class="sidebar animate__animated " #sidebar>
    
     <div class="sidebar__content">
-        <app-menu [isSideMenu]="true"></app-menu>
+        <app-menu [isSideMenu]="true" (onMenuClick)="goToSection($event)"></app-menu>
     </div>
    
 </div>

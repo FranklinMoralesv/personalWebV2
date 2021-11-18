@@ -3,9 +3,9 @@
     <app-logo></app-logo>
   
     <nav class="menu__nav">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects" (click)="goToSection($event)">Projects</a>
+        <a href="#about" (click)="goToSection($event)">About</a>
+        <a href="#contact" (click)="goToSection($event)">Contact</a>
         <a href="../../../../assets/cv_en.pdf">Resume</a>
     </nav>
        
