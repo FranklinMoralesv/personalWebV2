@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Renderer2, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -12,6 +12,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
   @ViewChild('word2') word2!:ElementRef;
   @ViewChild('word3') word3!:ElementRef;
   @ViewChild('word4') word4!:ElementRef;
+  @Output() onContactClick= new EventEmitter<string>();
  
 
   constructor(private renderer:Renderer2) { }
@@ -35,7 +36,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
   }
   
 
-  //Agrega las animaciones iniciales
+  ///Agrega las animaciones iniciales
   initialAnimation(){
    
     let animationDelay:number=1;
@@ -85,6 +86,15 @@ export class HeroComponent implements OnInit,AfterViewInit {
       });
      
     });
+  }
+
+  ///Emite el id de la seccion a la que se quiere navegar (contact)
+  goToSection(event:any){
+  //Detener la navegacion, porque no se sabe si esta cargado el componente
+  event.preventDefault();
+  const sectionId=event.target.attributes[1].value;
+  console.log('Click en :'+sectionId);
+  this.onContactClick.emit(sectionId);
   }
 
 

@@ -35,6 +35,7 @@ export class ContactComponent implements OnInit {
     return this.myForm.controls[field].value!=='';
   }
 
+  ///Emite una alerta para notificar que todavia no esta implementado el formulario
   sendMessage(){
 
     //TODO:Agregar funcionalidad  (nodemailer)  a esta caracteristica 
@@ -49,6 +50,7 @@ export class ContactComponent implements OnInit {
 
   }
 
+  ///Inicia el mapa con las cordenadas especificadas
   initMap(){
     
     //mapboxgl as any porque tiene un error en el tipado
@@ -60,7 +62,7 @@ export class ContactComponent implements OnInit {
     style: 'mapbox://styles/frankmv/ckvjsug6k239d16o3v6uphcsy'
     });
 
-    //creando el marcador y agregando estilos
+    //creando el marcador y configruando  estilos
     const element=this.renderer.createElement('div');
 
     this.renderer.setStyle(element,'width','220px');
@@ -84,8 +86,22 @@ export class ContactComponent implements OnInit {
     this.formIsInSight=true;
   }
 
+  ///Carga el estilo del mapa de forma perezoza
+  lazyloadStyle(){
+    //creando el elemento
+    const link=this.renderer.createElement('link');
+    this.renderer.setAttribute(link,'href','https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css');
+    this.renderer.setAttribute(link,'rel','stylesheet');
+  
+    
+    const head=document.querySelector('head');
+
+    //agregando al head
+    this.renderer.appendChild(head,link);
+  }
+
   ngOnInit(): void {
-    //  this.initMap();
+    this.lazyloadStyle();
   }
   }
 

@@ -4,24 +4,24 @@
 
     <div class="hero__welcome  tag tag-heading" #welcome>
       <h1 class="hero__title inline-flex " #word1 aria-label="Hi,">
-          <span *ngFor="let character of splitWord('Hi,')" class="hero__title-word animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
+          <span *ngFor="let character of splitWord('Hi,')" class="hero__title-word animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
       </h1>
       <h2 class="hero__title flex" #word2 aria-label="I'm Frank">
-        <span *ngFor="let character of splitWord('I\'m')" class="hero__title-word animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
+        <span *ngFor="let character of splitWord('I\'m')" class="hero__title-word animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
 
-        <span class="hero__title--red hero__title-word ml-1 animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">F</span>
-        <span class="hero__title--blue hero__title-word hero__title-word--warn animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','warn']">r</span>
-        <span class="hero__title--red hero__title-word  animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">a</span>
-        <span class="hero__title--blue hero__title-word hero__title-word--warn animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','warn']">n</span>
-        <span class="hero__title--red hero__title-word animate__animated  animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">k</span>
+        <span class="hero__title--red hero__title-word ml-1 animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">F</span>
+        <span class="hero__title--blue hero__title-word hero__title-word--warn animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','warn']">r</span>
+        <span class="hero__title--red hero__title-word  animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">a</span>
+        <span class="hero__title--blue hero__title-word hero__title-word--warn animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','warn']">n</span>
+        <span class="hero__title--red hero__title-word animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">k</span>
       </h2>
       <h3 class="hero__title tag tag-heading--close" aria-label="Web developer">
         <span class="inline-flex" #word3>
-          <span *ngFor="let character of splitWord('Web')" class="hero__title-word animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
+          <span *ngFor="let character of splitWord('Web')" class="hero__title-word animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
           <span class="mr-2"></span>
         </span>
         <span class="inline-flex"  #word4>
-          <span *ngFor="let character of splitWord('Developer')" class="hero__title-word animate__animated animate__faster" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
+          <span *ngFor="let character of splitWord('Developer')" class="hero__title-word animate__animated" hover [toogleHoverClass]="['animate__animated','animate__rubberBand','keyword']">{{character}}</span>
         </span>
           
       </h3>
@@ -32,7 +32,7 @@
   
     <p class="hero__text tag tag-paragraph animate__animated animate__fadeInUp  delay-2000">Front End Developer</p>
     <div class="hero__button">
-      <a href="#contact" class="btn-outline btn-outline--primary animate__animated animate__fadeInUp delay-2100">
+      <a href="#contact"  (click)="goToSection($event)" class="btn-outline btn-outline--primary animate__animated animate__fadeInUp delay-2100">
         Contact Me!
       </a>
     </div>
