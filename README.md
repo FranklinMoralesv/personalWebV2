@@ -43,3 +43,14 @@ The initial design is available on the figma platform  [Figma](https://www.figma
 The main objective of this project was to practice front-end web development and at the same time show the projects that I have worked on, but I was not sure which way to go, so I looked for examples of websites of talented people with a lot of more experience than me.
 
 So I found the portfolios of [jacek jeznach](https://jacekjeznach.com/) and [Brittany Chiang](https://brittanychiang.com/) that strongly influenced this project.
+
+## Contact
+Do you have any question? feel free to contact me at:
+* franklinmoralesv@gmail.com
+* [Telegram +584248992140](https://t.me/franklinmoralesv)
+* [Linkedin](https://www.linkedin.com/in/franklinmv/)
+* [Twitter](https://twitter.com/frankmoralesv)
+
+
+
+
