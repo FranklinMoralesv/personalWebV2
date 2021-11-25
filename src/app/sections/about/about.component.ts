@@ -28,7 +28,7 @@ export class AboutComponent implements OnInit {
       .then((lazyComponent)=>{
         this.viewContainerRef.createComponent(this.cfr.resolveComponentFactory(lazyComponent));
         this.lazy.contactComponentIsLoaded=true;
-        console.log('Cargo contact desde visivility');
+        // console.log('Cargo contact desde visivility');
       });
     }
   }

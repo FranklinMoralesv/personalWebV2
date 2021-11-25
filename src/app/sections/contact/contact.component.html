@@ -3,15 +3,15 @@
 
     <div class="contact__layout" observeVisibility (onDisplay)="onDisplaySection()">
         <div>
-            <p class="text tag tag-paragraph animate__animated  delay-300 visibility-hidden"  [ngClass]="{'animate__fadeIn visibility-visible': sectionIsInSight}">I am currently looking for a job opportunity as a front-end developer or game developer, where I can contribute my skills, knowledge and continue to develop professionally.</p>
+            <p class="text tag tag-paragraph animate__animated  delay-300 visibility-hidden"  [ngClass]="{'animate__fadeIn visibility-visible': sectionIsInSight}">I am currently looking for a job opportunity as a front-end developer, where I can contribute my skills, knowledge and continue to develop professionally.</p>
         
             <p class="text tag tag-paragraph animate__animated delay-400 visibility-hidden" [ngClass]="{'animate__fadeIn visibility-visible': sectionIsInSight}">
                 Contact me at 
-                <span class="contact__options">
-                    <span class="text"><span class="iconify contact__icon" data-icon="bx:bx-phone-call"></span> +58 424-899-21-40</span>
-                    <a class="link" href="mailto:franklinmoralesv@gmail.com"><span class="text"><span class="iconify contact__icon" data-icon="ci:mail"></span>franklinmoralesv@gmail.com</span></a>
-                </span>
             </p>
+            <div class="contact__options animate__animated delay-400 visibility-hidden" [ngClass]="{'animate__fadeIn visibility-visible': sectionIsInSight}">
+                <a class="link" target="_blank" href="https://t.me/franklinmoralesv"><span class="text"><span class="iconify contact__icon" data-icon="bx:bx-phone-call"></span> +58 424-899-21-40</span></a>
+                <a class="link" target="_blank" href="mailto:franklinmoralesv@gmail.com"><span class="text"><span class="iconify contact__icon" data-icon="ci:mail"></span>franklinmoralesv@gmail.com</span></a>
+            </div>
         
             <form class="form tag form__tags" [formGroup]="myForm" (ngSubmit)="sendMessage()" observeVisibility (onDisplay)="onDisplayForm()">
                 <div class="form__header animate__animated delay-500" [ngClass]="{'animate__fadeInUp': formIsInSight}">
@@ -48,10 +48,14 @@
                     Barcelona, Venezuela
                     <br>
                     <br>
+                    <a class="link" target="_blank" href="https://t.me/franklinmoralesv">
                     <span class="keyword">+58 424 899 2140</span>
+                    </a>
                     <br>
                     <br>
+                    <a class="link" target="_blank" href="mailto:franklinmoralesv@gmail.com">
                     <span class="keyword">franklinmoralesv@gmail.com</span>
+                    </a>
                 </p>
             </div>
         </div> 
